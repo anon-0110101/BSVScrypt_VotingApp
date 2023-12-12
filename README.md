@@ -1,5 +1,44 @@
 # Getting Started with Create React App
 
+Build your first decentralized application, or dApp, on the Bitcoin with this tutorial.
+
+# Step 1. Clone the project
+$ git clone //url//
+# Step 2. Install dependencies
+$ cd voting
+$ npm install
+# Step 3. Compile contract
+$ npx scrypt-cli compile
+# Step 4. Add your API Key
+Use your own API key in file index.tsx
+
+Scrypt.init({
+  apiKey: 'YOUR_API_KEY',  // <---
+  network: 'testnet'
+})
+# Step 5. Deploy contract
+Before deploying the contract, create a .env file and save your private key in the PRIVATE_KEY environment variable.
+
+PRIVATE_KEY=xxxxx
+If you don't have a private key, please follow this guide to generate one using Sensilet wallet, then fund the private key's address with our faucet.
+
+Run the following command to deploy the contract.
+
+$ npm run deploy:contract
+After success, you will see an output similar to the following:
+
+
+
+Copy the deployment TxID then change the value of ContractId in file src/App.tsx:
+
+const contract_id = {
+  txId: "bccf73c0f49920fdbd2c66972b6ab14ac098239c429176acf5e599acb7dc6d4a",
+  outputIndex: 0,
+};
+# Step 6. Run the frontend app
+# React App 
+$ npm start
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -26,18 +65,6 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 ## Learn More
 
