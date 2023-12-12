@@ -12,7 +12,7 @@ Voting.loadArtifact(artifact)
 
 
 Scrypt.init({
-  apiKey: 'testnet_22iv0LRDnzkkkM6QFiE1YKW6zU8mBIwY50eMwSAJZ6ZkOGjc',
+  apiKey: '///',
   network: bsv.Networks.testnet
 });
 const root = ReactDOM.createRoot(
